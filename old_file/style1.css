@@ -1,0 +1,128 @@
+        h1,
+        .h1,
+        .page-heading h1,
+        h2,
+        .h2,
+        .page-heading h2,
+        h3,
+        .h3,
+        .page-heading h3,
+        h4,
+        .h4,
+        .page-heading h4,
+        h5,
+        .h5,
+        .page-heading h5,
+        h6,
+        .h6,
+        .page-heading h6 {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase
+        }
+
+        body,
+        p {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px
+        }
+
+        .blog h1.page-heading--title,
+        .home .section-title h1 {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 125px
+        }
+
+        @media screen and (max-width:992px) {
+
+            .blog h1.page-heading--title,
+            .home .section-title h1 {
+                font-size: 40px
+            }
+        }
+
+        @media screen and (max-width:768px) {
+
+            .blog h1.page-heading--title,
+            .home .section-title h1 {
+                font-size: 50px
+            }
+        }
+
+        .home .auto-type-element {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px
+        }
+
+        .blog-posts .post-item .post-details .post-title a {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 20px
+        }
+
+        .blog-posts .post-item .post-details .post-meta.category,
+        .blog-posts .post-item .post-details .post-meta.date {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 11px
+        }
+
+        .single-post .post .post-meta-only .post-meta {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 11px
+        }
+
+        .product-filter ul {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase
+        }
+
+        .single-post .post .post-share-networks .share-title {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase
+        }
+
+        .button {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase
+        }
+
+        .single-post .post .author-info--details .author-name {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal;
+            text-transform: uppercase
+        }
+
+        .lg-outer .lg-dropdown a {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal
+        }
+
+        .menu-bar .show-menu-text {
+            font-family: "Abel";
+            font-style: normal;
+            font-weight: normal
+        }

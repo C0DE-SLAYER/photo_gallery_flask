@@ -1,0 +1,398 @@
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link rel="preload" href="https://fonts.gstatic.com/s/abel/v12/MwQ5bhbm2POE2V9BPbh5uGM.woff2" as="font" type="font/woff2" crossorigin> -->
+    <!-- <meta name='robots' content='max-image-preview:large' /> -->
+    <!-- <link rel='dns-prefetch' href='//fonts.googleapis.com' /> -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141030632-1"></script> -->
+    <!-- <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-141030632-1', { "groups": "laborator_analytics", "link_attribution": true, "linker": { "accept_incoming": true, "domains": ["laborator.co", "kaliumtheme.com", "oxygentheme.com", "neontheme.com", "themeforest.net", "laborator.ticksy.com"] } });
+        gtag('config', 'AW-991533214');
+    </script> -->
+    <!-- <meta property="og:type" content="article">
+    <meta property="og:title" content="Work">
+    <meta property="og:url" content="https://demo.kaliumtheme.com/photography/">
+    <meta property="og:site_name" content="Photography"> -->
+
+
+    <!-- <link rel='stylesheet' id='wp-block-library-css' href='https://demo.kaliumtheme.com/photography/wp-includes/css/dist/block-library/style.min.css?ver=81582bdb' media='all' /> -->
+    <!-- <link rel='stylesheet' id='classic-theme-styles-css' href='https://demo.kaliumtheme.com/photography/wp-includes/css/classic-themes.min.css?ver=c4ca4238' media='all' /> -->
+
+    <!-- <style id='global-styles-inline-css'>
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+        }
+
+        :where(.is-layout-flex) {
+            gap: 0.5em;
+        }
+
+        body .is-layout-flow>.alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-flow>.alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-flow>.aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained>.alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-constrained>.alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-constrained>.aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+            max-width: var(--wp--style--global--content-size);
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained>.alignwide {
+            max-width: var(--wp--style--global--wide-size);
+        }
+
+        body .is-layout-flex {
+            display: flex;
+        }
+
+        body .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        body .is-layout-flex>* {
+            margin: 0;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+
+        .wp-block-navigation a:where(:not(.wp-element-button)) {
+            color: inherit;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        .wp-block-pullquote {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+</style> -->
+
+
+    <!-- <link rel='stylesheet' id='js_composer_front-css' href='https://demo.kaliumtheme.com/photography/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5bba7d60' media='all' /> -->
+ <!-- <link rel='stylesheet' id='kalium-theme-other-css-css' href='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/css/other.min.css?ver=d133fbef' media='all' /> -->
+        <!-- <link rel='stylesheet' id='kalium-style-css-css' href='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/style.css?ver=d133fbef' media='all' /> -->
+    <!-- <link rel='stylesheet' id='custom-skin-css' href='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/css/custom-skin.css?ver=e45ee7cec6ccdaab8a9c53834ee0b29a992794' media='all' /> -->
+    <!-- <link rel='stylesheet' id='typolab-abel-font-1-css' href='https://fonts.googleapis.com/css2?family=Abel&#038;display=swap&#038;ver=8ed3bd7a' media='all' /> -->
+    <!-- <script type="text/javascript">
+        var ajaxurl = ajaxurl || 'https://demo.kaliumtheme.com/photography/wp-admin/admin-ajax.php';
+    </script> -->
+    <!-- <script type='text/javascript'
+        src='https://demo.kaliumtheme.com/photography/wp-includes/js/jquery/jquery-migrate.min.js?ver=531d09ab'
+        id='jquery-migrate-js'></script> -->
+
+    <!-- <link rel="canonical" href="https://demo.kaliumtheme.com/photography/" /> -->
+    <!-- <link rel='shortlink' href='https://demo.kaliumtheme.com/photography/' /> -->
+    <!-- <link rel="shortcut icon"  href="https://demo.kaliumtheme.com/photography/wp-content/uploads/2015/11/photography-favicon.png"> -->
+    <!-- <link rel="apple-touch-icon" href="https://demo.kaliumtheme.com/photography/wp-content/uploads/2015/11/photography.png"> -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="https://demo.kaliumtheme.com/photography/wp-content/uploads/2015/11/photography.png"> -->
+    <!-- <script>var mobile_menu_breakpoint = 768;</script> -->
+    <!-- <script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"Organization","name":"Photography","url":"https:\/\/demo.kaliumtheme.com\/photography","logo":"https:\/\/demo.kaliumtheme.com\/photography\/wp-content\/uploads\/2015\/04\/remi-logo@2x.png"}</script> -->
+
+
+
+
+    <!-- <script type="text/html" id="wpb-modifications"></script> -->
+    <!-- <link rel='stylesheet' id='kalium-videojs-css-css' href='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/vendors/video-js/video-js.min.css?ver=d133fbef' media='all' /> -->
+    <!-- <link rel='stylesheet' id='kalium-fontawesome-css-css' href='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/vendors/font-awesome/css/all.min.css?ver=d133fbef' media='all' /> -->
+    <!-- <script type='text/javascript' src='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/vendors/scrollmagic/ScrollMagic.min.js?ver=d133fbef' id='kalium-scrollmagic-js-js'></script> -->
+    <!-- <script type='text/javascript' src='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/vendors/scrollmagic/plugins/animation.gsap.min.js?ver=d133fbef' id='kalium-scrollmagic-gsap-js-js'></script> -->
+    <!-- <script type='text/javascript' src='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/js/sticky-header.min.js?ver=d133fbef' id='kalium-sticky-header-js-js'></script> -->
+    <!-- <script type='text/javascript' id='wpb_composer_front_js-js-extra'>
+        /* <![CDATA[ */
+        var vcData = { "currentTheme": { "slug": "kalium" } };
+/* ]]> */
+    </script> -->
+    <!-- <script type='text/javascript' src='https://demo.kaliumtheme.com/photography/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=5bba7d60' id='wpb_composer_front_js-js'></script> -->
+    <!-- <script type='text/javascript' src='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/vendors/gsap/ScrollToPlugin.min.js?ver=d133fbef' id='kalium-gsap-scrollto-js-js'></script> -->
+    <!-- <script type='text/javascript' src='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/vendors/video-js/video.min.js?ver=d133fbef' id='kalium-videojs-js-js'></script> -->
+    <!-- <script type='text/javascript' src='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/vendors/video-js-youtube/video-js-youtube.js?ver=d133fbef' id='kalium-videojs-youtube-js-js'></script> -->
+    <!-- <script type='text/javascript' src='https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/vendors/vimeo/player.min.js?ver=d133fbef' id='kalium-vimeo-player-js-js'></script> -->
+<!-- <link rel="stylesheet" id="kalium-bootstrap-css-css" href="kalium/assets/css/bootstrap.min.css?ver=d133fbef" media="all" /> -->
+  
+  <link rel="stylesheet" id="kalium-theme-style-new-css-css" href="https://demo.kaliumtheme.com/photography/wp-content/themes/kalium/assets/css/new/style.min.css?ver=d133fbef" media="all" />

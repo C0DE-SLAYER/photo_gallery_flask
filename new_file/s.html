@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .section {
+  padding: 30px 0;
+  color: #333;
+}
+
+.section .top-side {
+  text-align: center;
+}
+
+.section .top-side .title {
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-block;
+}
+
+.section .top-side .title:after {
+  content: '';
+  display: block;
+  width: 50%;
+  border-bottom: 1px solid #494949;
+  margin: 8px auto;
+}
+
+.section .top-side h2 {
+  font-weight: 700;
+}
+
+.section.portfolio .filters {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.section.portfolio .filters ul {
+  padding: 0;
+}
+
+.section.portfolio .filters ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 20px 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.section.portfolio .filters ul li:after {
+  content: '';
+  display: block;
+  width: calc(0% - 60px);
+  position: absolute;
+  height: 2px;
+  background: #333;
+  transition: width 350ms ease-out;
+}
+
+.section.portfolio .filters ul li:hover:after {
+  width: calc(100% - 60px);
+  transition: width 350ms ease-out;
+}
+
+.section.portfolio .filters ul li.active:after {
+  width: calc(100% - 60px);
+}
+
+.section.portfolio .filters-content {
+  margin-top: 50px;
+}
+
+.section.portfolio .filters-content .show {
+  opacity: 1;
+  visibility: visible;
+  transition: all 350ms;
+}
+
+.section.portfolio .filters-content .hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 350ms;
+}
+
+.section.portfolio .filters-content .item {
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.section.portfolio .filters-content .item .p-inner {
+  padding: 20px 30px;
+  box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+
+.section.portfolio .filters-content .item .p-inner h5 {
+  font-size: 15px;
+}
+
+.section.portfolio .filters-content .item .p-inner .cat {
+  font-size: 13px;
+}
+
+.section.portfolio .filters-content .item img {
+  width: 100%;
+}
+
+</style>
+
+
+
+</head>
+<body>
+    <section class="portfolio section">
+        <div class="container">
+          <div class="top-side">
+            <h4 class="title">MY WORKS</h4>
+            <h2>PORTFOLIO</h2>
+          </div>
+          
+          <div class="filters">
+            <ul>
+              <li class="active" data-filter="*">All</li>
+              <li data-filter=".corporate">Corporate</li>
+              <li data-filter=".personal">Personal</li>
+              <li data-filter=".agency">Agency</li>
+              <li data-filter=".portal">Portal</li>
+            </ul>
+          </div>
+          
+          <div class="filters-content">
+            <div class="row grid">
+              <div class="col-sm-4 all corporate">
+                <div class="item">
+                  <img src="https://i.picsum.photos/id/923/1000/1200.jpg?hmac=aTXp3_sl8AMqNddbsjWOIy6R8-RCLWB5GoFrQUWIusA" alt="Work 1">
+                  <div class="p-inner">
+                    <h5>Work 1</h5>
+                    <div class="cat">Corporate</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 all personal">
+                <div class="item">
+                  <img src="https://i.picsum.photos/id/1014/1000/1600.jpg?hmac=J7nIoCc0sqwy89muMNzuYWzK3UcBlAAraWUGR1r6X4U" alt="Work 1">
+                  <div class="p-inner">
+                    <h5>Work 1</h5>
+                    <div class="cat">Personal</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 all agency">
+                <div class="item">
+                  <img src="https://i.picsum.photos/id/1081/1000/1400.jpg?hmac=OhhXp4iAtTJQcx6fx3dehRJ7R3YjEqDcxow-sj6z0sc" alt="Work 1">
+                  <div class="p-inner">
+                    <h5>Work 1</h5>
+                    <div class="cat">Agency</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 all portal">
+                <div class="item">
+                  <img src="https://i.picsum.photos/id/267/1200/1400.jpg?hmac=3rlhklmRH3kQvtK87L57l5ewC9WGL5pF8d7xQhb82bg" alt="Work 1">
+                  <div class="p-inner">
+                    <h5>Work 1</h5>
+                    <div class="cat">Portal</div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+
+<script>
+    $('.filters ul li').click(function(){
+  $('.filters ul li').removeClass('active');
+  $(this).addClass('active');
+  
+  var data = $(this).attr('data-filter');
+  $grid.isotope({
+    filter: data
+  })
+});
+
+var $grid = $(".grid").isotope({
+  itemSelector: ".all",
+  percentPosition: true,
+  masonry: {
+    columnWidth: ".all"
+  }
+})
+    </script>
+
+</body>
+</html>

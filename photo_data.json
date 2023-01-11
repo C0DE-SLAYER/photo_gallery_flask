@@ -1,0 +1,82 @@
+[
+    {
+        "path": "img/photo/4.jpg",
+        "filter": "photo"
+    },
+    {
+        "path": "img/photo/3.jpg",
+        "filter": "photo"
+    },
+    {
+        "path": "img/photo/2.jpg",
+        "filter": "photo"
+    },
+    {
+        "path": "img/photo/1.jpg",
+        "filter": "photo"
+    },
+    {
+        "path": "img/natural/6.jpg",
+        "filter": "natural"
+    },
+    {
+        "path": "img/natural/8.jpg",
+        "filter": "natural"
+    },
+    {
+        "path": "img/natural/5.jpg",
+        "filter": "natural"
+    },
+    {
+        "path": "img/natural/7.jpg",
+        "filter": "natural"
+    },
+    {
+        "path": "img/fashion/16.jpg",
+        "filter": "fashion"
+    },
+    {
+        "path": "img/fashion/14.jpg",
+        "filter": "fashion"
+    },
+    {
+        "path": "img/fashion/15.jpg",
+        "filter": "fashion"
+    },
+    {
+        "path": "img/fashion/13.jpg",
+        "filter": "fashion"
+    },
+    {
+        "path": "img/lifestyle/12.jpg",
+        "filter": "lifestyle"
+    },
+    {
+        "path": "img/lifestyle/10.jpg",
+        "filter": "lifestyle"
+    },
+    {
+        "path": "img/lifestyle/9.jpg",
+        "filter": "lifestyle"
+    },
+    {
+        "path": "img/lifestyle/11.jpg",
+        "filter": "lifestyle"
+    },
+    {
+        "path": "img/travel/18.jpg",
+        "filter": "travel"
+    },
+    {
+        "path": "img/travel/17.jpg",
+        "filter": "travel"
+    },
+    {
+        "path": "img/travel/19.jpg",
+        "filter": "travel"
+    },
+    {
+        "path": "img/travel/20.jpg",
+        "filter": "travel"
+    }
+]

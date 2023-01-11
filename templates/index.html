@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Manmeet Bhatti</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="SUNZINE Photo Studio HTML Template">
+  <meta name="keywords" content="photo, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/font-awesome.min.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/lightgallery.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/../static/css/all.min.css" />
+
+
+</head>
+
+<body>
+
+  <!-- logo and header -->
+  <header class="header">
+    <a href="#" class="site-logo">
+      <img src="{{url_for('static', filename = 'img/logo.jpg')}}" alt="">
+    </a>
+  </header>
+
+  <section class="gallery__section">
+
+    <!-- filter part -->
+    <div class="filter-controls">
+      <ul>
+        <li class="active" data-filter="*">ALL</li>
+        <li data-filter=".photo">PHOTOGRAPHY</li>
+        <li data-filter=".travel">TRAVEL</li>
+        <li data-filter=".natural">NATURE</li>
+        <li data-filter=".fashion">FASHION</li>
+        <li data-filter=".lifestyle">LIFE STYLE</li>
+      </ul>
+    </div>
+      
+    <!-- gallery code -->
+    <div class="gallery__warp" id="lightgallery">
+      <!-- 1 photo start -->
+      {%for i in range(range_len)%}
+      <div class="mix grid__item grid--{{index[i%19]}} {{photo_data[i]['filter']}}" data-src="{{url_for('static', filename = photo_data[i]['path'] )}}">
+        <a href="#">
+          <div class="gallery_img set-bg"  data-setbg="{{url_for('static', filename = photo_data[i]['path'] )}}">
+            <img class="go" src="{{url_for('static', filename = photo_data[i]['path'] )}}" alt="">
+            <div class="gellery__text ">
+              <span>Photography / Flower</span>
+              <h3>Flower In Door</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+      <!-- photo end -->
+
+      
+    </div>
+
+
+    <!-- logo of loding more images -->
+    <div class="gird__loading">
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+
+  </section>
+
+  <script src="{{url_for('static', filename = 'js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'js/mixitup.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+  <script src="{{url_for('static', filename = 'js/lightgallery-all.min.js')}}"></script>
+
+</body>
+
+</html>

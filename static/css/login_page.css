@@ -182,3 +182,12 @@ body {
 .social-login__icon:hover {
 	transform: scale(1.5);	
 }
+
+.alert_float {
+	position: fixed;
+	top: .7rem;
+	z-index: 1010;
+	right: 1rem;
+	left: 1rem;
+	text-align: center;
+}

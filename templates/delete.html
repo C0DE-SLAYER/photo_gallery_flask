@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text">Dashboard Sidebar</div>
+<div>
+
+    <!-- <div class="image-area text">
+        <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png"  alt="Preview">
+        <a class="remove-image" href="https://google.com" style="display: inline;">&#215;</a>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><h3>Remove cards demo</h3></div>
+        </div>
+        <ul class="row list-unstyled">
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="thumbnail"> <a class="close" href="#">×</a>
+    
+                    <img src="https://blog.codepen.io/wp-content/uploads/2012/06/White-Large.png" class="img-responsive">
+                     <h3>Thumbnail label</h3>
+    
+                    <p>Thumbnail caption...</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+
+<script>
+    $('.close').click(function(){
+  var $target = $(this).parents('li');
+  $target.hide('slow', function(){ $target.remove(); });
+})
+</script>
+{% endblock %}

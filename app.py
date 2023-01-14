@@ -63,5 +63,17 @@ def logout():
     return redirect('/')
 
 
+@app.route('/upload')
+def upload():
+    return render_template('upload.html')
+
+@app.route('/delete')
+def delete():
+    return render_template('delete.html')
+
+@app.route('/update')
+def update():
+    return render_template('update.html')
+
 if __name__ == '__main__':
-    app.run(debug=True,host='192.168.0.107')
+    app.run(debug=True,host='192.168.0.111')

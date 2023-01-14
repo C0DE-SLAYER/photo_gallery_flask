@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/delete.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav class="sidebar close">
+
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{{url_for('static',filename='img/photo/4.jpg')}}" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="name">Codinglab</span>
+                    <span class="profession">Web developer</span>
+                </div>
+            </div>
+          <i class='material-icons toggle'>chevron_right</i>
+        </header>
+        
+        <div class="menu-bar">
+            <div class="menu">
+           <ul class="menu-links">
+               <li class="nav-link">
+                   <a href="{{ url_for('dashboard') }}">
+                       <i class='material-icons icon'>home</i>
+                       <span class="text nav-text">Dashboard</span>
+                    </a>
+                </li>
+                
+                <li class="nav-link">
+                    <a href="{{ url_for('upload') }}">
+                        <i class='material-icons icon'>upload</i>
+                        <span class="text nav-text">Upload</span>
+                    </a>
+                </li>
+                
+                <li class="nav-link">
+                    <a href="{{ url_for('delete') }}">
+                        <i class='material-icons icon'>delete</i>
+                        <span class="text nav-text">Delete Photo</span>
+                    </a>
+                </li>
+                
+                <li class="nav-link">
+                    <a href="{{ url_for('update') }}">
+                        <i class='material-icons icon'>update</i>
+                        <span class="text nav-text">Update Photo</span>
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="{{ url_for('logout') }}">
+                  <i class='material-icons icon'>logout</i>
+                  <span class="text nav-text">Logout</span>
+                </a>
+              </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="home">
+    {% block content %}
+    {% endblock %}
+</section>
+
+<script src="{{url_for('static',filename='js/base.js')}}"></script>
+    </body>
+
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Elegant Table Design</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/css/table.css">
+    <!-- <link id="pagestyle" href="https://appsrv1-147a1.kxcdn.com/material-dashboard2/css/material-dashboard.css?v=3.0.0" rel="stylesheet"> -->
+    <style>
+        body {
+            color: #566787;
+            background: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .table-responsive {
+            margin: 30px 0;
+        }
+
+        .table-wrapper {
+            min-width: 1000px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        }
+
+
+
+        .search-box {
+            position: relative;
+            float: right;
+        }
+
+        .search-box .input-group {
+            min-width: 200px;
+            position: absolute;
+            right: 0;
+        }
+
+        .search-box .input-group-addon,
+        .search-box input {
+            border-color: #ddd;
+            border-radius: 0;
+        }
+
+        .search-box .input-group-addon {
+            border: none;
+            border: none;
+            background: transparent;
+            position: absolute;
+            z-index: 9;
+        }
+
+        .search-box input {
+            height: 34px;
+            padding-left: 28px;
+            box-shadow: none !important;
+            border-width: 0 0 1px 0;
+        }
+
+        .search-box input:focus {
+            border-color: #3FBAE4;
+        }
+
+        .search-box i {
+            color: #a0a5b1;
+            font-size: 19px;
+            position: relative;
+            top: 2px;
+            left: -10px;
+        }
+
+        table.table tr th,
+        table.table tr td {
+            border-color: #e9e9e9;
+        }
+
+        table.table th i {
+            font-size: 13px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        table.table td:last-child {
+            width: 130px;
+        }
+
+        table.table td a {
+            color: #a0a5b1;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        table.table td a.view {
+            color: #03A9F4;
+        }
+
+        table.table td a.edit {
+            color: #FFC107;
+        }
+
+        table.table td a.delete {
+            color: #E34724;
+        }
+
+        table.table td i {
+            font-size: 19px;
+        }
+
+        .pagination {
+            float: right;
+            margin: 0 0 5px;
+        }
+
+        .pagination li a {
+            border: none;
+            font-size: 13px;
+            min-width: 30px;
+            min-height: 30px;
+            padding: 0 10px;
+            color: #999;
+            margin: 0 2px;
+            line-height: 30px;
+            border-radius: 30px !important;
+            text-align: center;
+        }
+
+        .pagination li a:hover {
+            color: #666;
+        }
+
+        .pagination li.active a {
+            background: #03A9F4;
+        }
+
+        .pagination li.active a:hover {
+            background: #0397d6;
+        }
+
+        .pagination li.disabled i {
+            color: #ccc;
+        }
+
+        .pagination li i {
+            font-size: 16px;
+            padding-top: 6px
+        }
+
+        .hint-text {
+            float: left;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="row mt-8">
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-header p-3 pt-2">
+                        <div
+                            class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                            <i class="material-icons opacity-10">weekend</i> </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize">Today's Money</p>
+                            <h4 class="mb-0">$53k</h4>
+                        </div>
+                    </div>
+                    <hr class="dark horizontal my-0">
+                    <div class="card-footer p-3">
+                        <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than lask
+                            week</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-header p-3 pt-2">
+                        <div
+                            class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
+                            <i class="material-icons opacity-10">person</i> </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize">Today's Users</p>
+                            <h4 class="mb-0">2,300</h4>
+                        </div>
+                    </div>
+                    <hr class="dark horizontal my-0">
+                    <div class="card-footer p-3">
+                        <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than lask
+                            month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-header p-3 pt-2">
+                        <div
+                            class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                            <i class="material-icons opacity-10">person</i> </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize">New Clients</p>
+                            <h4 class="mb-0">3,462</h4>
+                        </div>
+                    </div>
+                    <hr class="dark horizontal my-0">
+                    <div class="card-footer p-3">
+                        <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than
+                            yesterday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="card">
+                    <div class="card-header p-3 pt-2">
+                        <div
+                            class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                            <i class="material-icons opacity-10">weekend</i> </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize">Sales</p>
+                            <h4 class="mb-0">$103,430</h4>
+                        </div>
+                    </div>
+                    <hr class="dark horizontal my-0">
+                    <div class="card-footer p-3">
+                        <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than
+                            yesterday</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="row">
+                    <h2 class="text-center">Photo's</h2>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name <i class="fa fa-sort"></i></th>
+                            <th>Address</th>
+                            <th>City <i class="fa fa-sort"></i></th>
+                            <th>Pin Code</th>
+                            <th>Country <i class="fa fa-sort"></i></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Thomas Hardy</td>
+                            <td>89 Chiaroscuro Rd.</td>
+                            <td>Portland</td>
+                            <td>97219</td>
+                            <td>USA</td>
+                            <td>
+                                <a href="#" class="view" title="View" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE417;</i></a>
+                                <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE254;</i></a>
+                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Maria Anders</td>
+                            <td>Obere Str. 57</td>
+                            <td>Berlin</td>
+                            <td>12209</td>
+                            <td>Germany</td>
+                            <td>
+                                <a href="#" class="view" title="View" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE417;</i></a>
+                                <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE254;</i></a>
+                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Fran Wilson</td>
+                            <td>C/ Araquil, 67</td>
+                            <td>Madrid</td>
+                            <td>28023</td>
+                            <td>Spain</td>
+                            <td>
+                                <a href="#" class="view" title="View" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE417;</i></a>
+                                <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE254;</i></a>
+                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Dominique Perrier</td>
+                            <td>25, rue Lauriston</td>
+                            <td>Paris</td>
+                            <td>75016</td>
+                            <td>France</td>
+                            <td>
+                                <a href="#" class="view" title="View" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE417;</i></a>
+                                <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE254;</i></a>
+                                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                        class="material-icons">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

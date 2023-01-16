@@ -14,6 +14,6 @@ for root, dirs, files in os.walk(path):
 # Add image path and directory names to list
                         image_paths.append({"path": image_path, "filter":root.split('/')[-1]})
                         image_paths_json = json.dumps(image_paths)
-with open('photo_data.json', 'w') as f:
+with open('photo_data1.json', 'w') as f:
         f.write(image_paths_json)
 # print(image_paths_json)

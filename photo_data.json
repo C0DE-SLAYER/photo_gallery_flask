@@ -1,82 +1,102 @@
 [
     {
         "path": "img/photo/4.jpg",
-        "filter": "photo"
+        "filter": "photo",
+        "title": "title1"
     },
     {
         "path": "img/photo/3.jpg",
-        "filter": "photo"
+        "filter": "photo",
+        "title": "title2"
     },
     {
         "path": "img/photo/2.jpg",
-        "filter": "photo"
+        "filter": "photo",
+        "title": "title3"
     },
     {
         "path": "img/photo/1.jpg",
-        "filter": "photo"
+        "filter": "photo",
+        "title": "title4"
     },
     {
         "path": "img/natural/6.jpg",
-        "filter": "natural"
+        "filter": "natural",
+        "title": "title5"
     },
     {
         "path": "img/natural/8.jpg",
-        "filter": "natural"
+        "filter": "natural",
+        "title": "title6"
     },
     {
         "path": "img/natural/5.jpg",
-        "filter": "natural"
+        "filter": "natural",
+        "title": "title7"
     },
     {
         "path": "img/natural/7.jpg",
-        "filter": "natural"
+        "filter": "natural",
+        "title": "title8"
     },
     {
         "path": "img/fashion/16.jpg",
-        "filter": "fashion"
+        "filter": "fashion",
+        "title": "title9"
     },
     {
         "path": "img/fashion/14.jpg",
-        "filter": "fashion"
+        "filter": "fashion",
+        "title": "title10"
     },
     {
         "path": "img/fashion/15.jpg",
-        "filter": "fashion"
+        "filter": "fashion",
+        "title": "title11"
     },
     {
         "path": "img/fashion/13.jpg",
-        "filter": "fashion"
+        "filter": "fashion",
+        "title": "title12"
     },
     {
         "path": "img/lifestyle/12.jpg",
-        "filter": "lifestyle"
+        "filter": "lifestyle",
+        "title": "title13"
     },
     {
         "path": "img/lifestyle/10.jpg",
-        "filter": "lifestyle"
+        "filter": "lifestyle",
+        "title": "title14"
     },
     {
         "path": "img/lifestyle/9.jpg",
-        "filter": "lifestyle"
+        "filter": "lifestyle",
+        "title": "title15"
     },
     {
         "path": "img/lifestyle/11.jpg",
-        "filter": "lifestyle"
+        "filter": "lifestyle",
+        "title": "title16"
     },
     {
         "path": "img/travel/18.jpg",
-        "filter": "travel"
+        "filter": "travel",
+        "title": "title17"
     },
     {
         "path": "img/travel/17.jpg",
-        "filter": "travel"
+        "filter": "travel",
+        "title": "title18"
     },
     {
         "path": "img/travel/19.jpg",
-        "filter": "travel"
+        "filter": "travel",
+        "title": "title19"
     },
     {
         "path": "img/travel/20.jpg",
-        "filter": "travel"
+        "filter": "travel",
+        "title": "title20"
     }
 ]

@@ -36,7 +36,7 @@ def home():
 @app.route('/dashboard')
 # @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    return render_template('dashboard.html',photo_data=photo_data,range_len=len(photo_data))
 
 
 @app.route('/login', methods=['GET','POST'])
@@ -76,4 +76,4 @@ def update():
     return render_template('update.html')
 
 if __name__ == '__main__':
-    app.run(debug=True,host='192.168.0.107')
+    app.run(debug=True,host='192.168.0.111')

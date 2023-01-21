@@ -6,13 +6,14 @@ body {
 	height: 100%;
 	font-family: "Raleway", sans-serif;
 	-webkit-font-smoothing: antialiased;
-	-ms-overflow-style: none;  /* IE and Edge */
+	-ms-overflow-style: none;
+	/* IE and Edge */
 	scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
 	display: none;
-  }
+}
 
 h2,
 h3,
@@ -539,7 +540,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 /* custom css */
-.go{
+.go {
 	display: none;
 }
 
@@ -549,3 +550,99 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 	color: #111111;
 	padding: 45px 0 95px;
 }
+
+
+
+/* upload page css */
+.left-div {
+	line-height: 10vh;
+}
+
+.left-div p b{
+	color: #fff;
+}
+
+.left-div p {
+	font-size: 2rem;
+	align-items: flex-start;
+}
+
+input {
+	border-radius: 10px;
+	padding: 0 10px;
+}
+
+select {
+	border-radius: 10px;
+	padding: 0 10px;
+	width: 19vw;
+}
+
+.right-div {
+	font-size: xx-large;
+}
+
+#inputTag {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+	font-size: 5rem;
+	text-align: center;
+	border: 5px dotted black;
+	padding: 5rem;
+	border-radius: 50px;
+}
+
+#imageName {
+	color: green;
+}
+.text_First{
+	color: #fff;
+	font-size: xx-large;
+	font-weight: bold
+}
+
+@media screen and (max-width:786px) {
+	
+.left-div p {
+	font-size: 1.5rem;
+}
+
+input {
+	padding: 0 10px;
+}
+.right-div {
+	font-size: large;
+}
+
+label {
+	font-size: 3rem;
+}
+.text_First{
+	font-size: medium;
+}
+}
+
+@media screen and (max-width:300px) {
+	
+	.left-div p {
+		font-size: 1.1rem;
+	}
+	
+	input {
+		padding: 0 5px;
+	}
+	.right-div {
+		font-size: medium;
+	}
+	
+	label {
+		font-size: 1rem;
+		padding: 3rem;
+	}
+	.text_First{
+		font-size: small;
+	}
+	}

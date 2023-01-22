@@ -7,3 +7,58 @@
       </form>   
    </body>
 </html>
+
+
+
+
+<!-- hanzala code for upload -->
+<div class="container w-100 h-100 "
+style="display: grid; align-items:center; color: #fff;">
+<form action method="post">
+        <p class="text-center text_First">Image uplod form</p>
+        <div class="col-lg-6  left-div " >
+        <div class="col-lg-4  left-div " ></div>
+        <div class="col-lg-8  left-div " >
+            <p>
+                <b>Title</b> <br />
+                <input type="text" name="title" placeholder="title">
+            </p>
+            <p>
+                <b>Category</b><br />
+                <select>
+                    <option>dfr</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </p>
+            <p>
+                <b>Create New Category</b><br />
+                <input type="text" placeholder="new">
+            </p>
+            <input type="button" value="submit" class="btn btn-primary">
+        </div>
+        </div>
+        <div class="col-lg-6 right-div m-0">
+            <label for="inputTag">
+                Select Image <br />
+                <i class="fa fa-2x fa-camera"></i>
+                <input id="inputTag" type="file" multiple>
+                <br>
+                <span id="imageName"></span>
+            </label><br>
+            uplode Images
+        </div>
+    </form>
+</div>
+
+<script>
+    let input = document.getElementById("inputTag");
+    let imageName = document.getElementById("imageName")
+
+    input.addEventListener("change", ()=>{
+        let inputImage = document.querySelector("input[type=file]").files[0];
+
+        imageName.innerText = inputImage.name;
+    })
+</script>

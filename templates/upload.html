@@ -4,127 +4,65 @@
 <div class="body_css">
 
     <div class="container_1">
-        <header>Signup Form</header>
+        <header>Upload Form</header>
         <div class="upload_progress_bar">
+
             <div class="step">
-                <p>Name</p>
+                <p>Title</p>
                 <div class="bullet">
                     <span>1</span>
                 </div>
                 <div class="check fas fa-check"></div>
             </div>
             <div class="step">
-                <p>Contact</p>
+                <p>Category</p>
                 <div class="bullet">
                     <span>2</span>
                 </div>
                 <div class="check fas fa-check"></div>
             </div>
             <div class="step">
-                <p>Birth</p>
+                <p>Upload</p>
                 <div class="bullet">
                     <span>3</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Debt</p>
-                <div class="bullet">
-                    <span>4</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Adress</p>
-                <div class="bullet">
-                    <span>5</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Submit</p>
-                <div class="bullet">
-                    <span>6</span>
                 </div>
                 <div class="check fas fa-check"></div>
             </div>
         </div>
         <div class="form-outer">
             <form action="#">
-                <div class="page slide-page">
-                    <div class="title">Basic Info:</div>
-                    <div class="field">
-                        <div class="upload_label">First Name</div>
-                        <input type="text" required />
-                    </div>
-                    <div class="field">
-                        <div class="upload_label">Last Name</div>
-                        <input type="text" required />
-                    </div>
-                    <div class="field">
-                        <button class="firstNext next">Next</button>
-                    </div>
-                </div>
 
-                <div class="page">
-                    <div class="title">Contact Info:</div>
+                <div class="page slide-page">
+                    <div class="title">Photo Title</div>
                     <div class="field">
-                        <div class="upload_label">Email Address</div>
-                        <input type="text" required />
+                        <div class="upload_label">Title *</div>
+                        <input type="text" />
                     </div>
                     <div class="field">
-                        <div class="upload_label">Phone Number</div>
-                        <input type="Number" required />
+                        <div class="upload_label">Sub-Title</div>
+                        <input type="text" />
                     </div>
                     <div class="field btns">
-                        <button class="prev-1 prev">Previous</button>
-                        <button class="next-1 next">Next</button>
-                    </div>
-                </div>
-                <div class="page">
-                    <div class="title">Contact Info 2:</div>
-                    <div class="field">
-                        <div class="upload_label">Email Address</div>
-                        <input type="text" required />
-                    </div>
-                    <div class="field">
-                        <div class="upload_label">Phone Number</div>
-                        <input type="Number" required />
-                    </div>
-                    <div class="field btns">
-                        <button class="prev-2 prev">Previous</button>
-                        <button class="next-2 next">Next</button>
-                    </div>
-                </div>
-                <div class="page">
-                    <div class="title">Contact Info 3:</div>
-                    <div class="field">
-                        <div class="upload_label">Email Address</div>
-                        <input type="text" required />
-                    </div>
-                    <div class="field">
-                        <div class="upload_label">Phone Number</div>
-                        <input type="Number" required />
-                    </div>
-                    <div class="field btns">
-                        <button class="prev-3 prev">Previous</button>
                         <button class="next-3 next">Next</button>
                     </div>
                 </div>
 
                 <div class="page">
-                    <div class="title">Date of Birth:</div>
+                    <div class="title">Category</div>
                     <div class="field">
-                        <div class="upload_label">Date</div>
-                        <input type="text" required />
+                        <div class="upload_label">Existing Category</div>
+                        <select>
+                            <option value="">None</option>
+                            <option name="cat1">fashion</option>
+                            <option name="cat2">lifestyle</option>
+                            <option name="cat3">natural</option>
+                            <option name="cat4">photo</option>
+                            <option name="cat5">travel</option>
+                        </select>
                     </div>
                     <div class="field">
-                        <div class="upload_label">Gender</div>
-                        <select required>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Other</option>
-                        </select>
+                        <div class="upload_label">New Category</div>
+                        <input type="text" />
                     </div>
                     <div class="field btns">
                         <button class="prev-4 prev">Previous</button>
@@ -133,14 +71,21 @@
                 </div>
 
                 <div class="page">
-                    <div class="title">Login Details:</div>
+                    <div class="title">Upload</div>
                     <div class="field">
-                        <div class="upload_label">Username</div>
-                        <input type="text" required />
-                    </div>
-                    <div class="field">
-                        <div class="upload_label">Password</div>
-                        <input type="password" required />
+                        <div class="upload_label">Upload Photo</div>
+                            <div class="col-lg-6 right-div m-0">
+                                <label for="inputTag">
+                                    Select Image <br />
+                                    <i class="fa fa-2x fa-camera" style="font-size: 1px;"></i>
+                                    <input id="inputTag" type="file" multiple>
+                                    <br>
+                                    <span id="imageName"></span>
+                                </label><br>
+                                uplode Images
+                            </div>
+                            </button>
+                        </div>
                     </div>
                     <div class="field btns">
                         <button class="prev-5 prev">Previous</button>

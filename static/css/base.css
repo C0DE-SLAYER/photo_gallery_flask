@@ -557,20 +557,19 @@ body.dark .home .text {
 /* upload css */
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     outline: none;
     font-family: "Poppins", sans-serif;
-}
+} */
 
 :root {
     --primary: #333;
     --secondary: #333;
     --errorColor: red;
-    --stepNumber: 6;
+    --stepNumber: 3;
     --containerWidth: 600px;
-    --bgColor: #333;
     --inputBorderColor: lightgray;
 }
 
@@ -580,7 +579,6 @@ body.dark .home .text {
     justify-content: center;
     min-height: 100vh;
     overflow-x: hidden;
-    background: var(--bgColor);
 }
 
 ::selection {
@@ -590,10 +588,9 @@ body.dark .home .text {
 
 .container_1 {
     width: var(--containerWidth);
-    background: #fff;
+    
     text-align: center;
     border-radius: 5px;
-    padding: 50px 35px 10px 35px;
 }
 
 .container_1 header {
@@ -694,14 +691,14 @@ form .page .btns button.next {
 }
 
 .container_1 .upload_progress_bar {
-    display: flex;
-    margin: 40px 0;
-    user-select: none;
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+  justify-content: center;
 }
 
 .container_1 .upload_progress_bar .step {
-    text-align: center;
-    width: 100%;
+    width: 15%;
     position: relative;
 }
 
@@ -733,7 +730,7 @@ form .page .btns button.next {
 .upload_progress_bar .step .bullet span {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,-6%);
 }
 
 .upload_progress_bar .step .bullet.active span {
@@ -793,6 +790,10 @@ form .page .btns button.next {
         --containerWidth: 400px;
     }
 
+    .container_1 {
+      padding: 50px 35px 10px 35px;
+  }
+
     .upload_progress_bar .step p {
         display: none;
     }
@@ -822,6 +823,10 @@ form .page .btns button.next {
         align-items: center;
         justify-content: center;
     }
+    .upload_progress_bar .step .bullet span {
+      
+      transform: translate(-50%,0);
+  }
 }
 
 @media screen and (max-width: 490px) {
@@ -832,5 +837,16 @@ form .page .btns button.next {
     .container_1 {
         box-sizing: border-box;
         border-radius: 0;
+          padding: 50px 35px 10px 35px;
     }
+    .upload_progress_bar .step .bullet span {
+    
+      transform: translate(-50%,0);
+  }
+}
+
+
+/* upload button cs */
+.upload_button{
+  display: flex;
 }

@@ -89,26 +89,42 @@ function initMultiStepForm() {
 
 
 // upload button js
+var imgUpload = document.getElementById('upload-img')
+  , imgPreview = document.getElementById('img-preview')
+  , imgUploadForm = document.getElementById('form-upload')
+  , totalFiles
+  , previewTitle
+  , previewTitleText
+  , img;
 
-$(function () {
-    $(document).on('click', '.btn-add', function (e) {
-        e.preventDefault();
+imgUpload.addEventListener('change', previewImgs, true);
 
-        var controlForm = $('.controls:first'),
-            currentEntry = $(this).parents('.entry:first'),
-            newEntry = $(currentEntry.clone()).appendTo(controlForm);
+function previewImgs(event) {
+  totalFiles = imgUpload.files.length;
+  
+     if(!!totalFiles) {
+    imgPreview.classList.remove('img-thumbs-hidden');
+  }
+  
+  for(var i = 0; i < totalFiles; i++) {
+    wrapper = document.createElement('div');
+    wrapper.classList.add('wrapper-thumb');
+    removeBtn = document.createElement("span");
+    nodeRemove= document.createTextNode('x');
+    removeBtn.classList.add('remove-btn');
+    removeBtn.appendChild(nodeRemove);
+    img = document.createElement('img');
+    img.src = URL.createObjectURL(event.target.files[i]);
+    img.classList.add('img-preview-thumb');
+    wrapper.appendChild(img);
+    wrapper.appendChild(removeBtn);
+    imgPreview.appendChild(wrapper);
+   
+    $('.remove-btn').click(function(){
+      $(this).parent('.wrapper-thumb').remove();
+    });    
 
-        newEntry.find('input').val('');
-        controlForm.find('.entry:not(:last) .btn-add')
-            .removeClass('btn-add').addClass('btn-remove')
-            .removeClass('btn-success').addClass('btn-danger')
-            .html('<span class="fa fa-trash"></span>');
-    }).on('click', '.btn-remove', function (e) {
-        $(this).parents('.entry:first').remove();
-
-        e.preventDefault();
-        return false;
-    });
-});
-
-
+  }
+  
+  
+}

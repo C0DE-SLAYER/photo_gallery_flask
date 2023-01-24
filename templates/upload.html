@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="form-outer">
-            <form action="#">
+            <form action="" method="post" enctype="multipart/form-data" id="form-upload">
 
                 <div class="page slide-page">
                     <div class="title">Photo Title</div>
@@ -72,20 +72,12 @@
 
                 <div class="page">
                     <div class="title">Upload</div>
-                    <div class="field">
-                        <div class="upload_label">Upload Photo</div>
-                            <div class="col-lg-6 right-div m-0">
-                                <label for="inputTag">
-                                    Select Image <br />
-                                    <i class="fa fa-2x fa-camera" style="font-size: 1px;"></i>
-                                    <input id="inputTag" type="file" multiple>
-                                    <br>
-                                    <span id="imageName"></span>
-                                </label><br>
-                                uplode Images
-                            </div>
-                            </button>
+                    <div class="field_upload">
+                        <div class="upload_label mb-3" style="float: left;">Upload Photo</div>
+                        <div class="form-group">
+                            <input type="file" class="form-control" name="images[]" multiple id="upload-img" />
                         </div>
+                        <div class="img-thumbs img-thumbs-hidden" id="img-preview"></div>
                     </div>
                     <div class="field btns">
                         <button class="prev-5 prev">Previous</button>
@@ -95,7 +87,6 @@
             </form>
         </div>
     </div>
-
 </div>
 
 {% endblock %}

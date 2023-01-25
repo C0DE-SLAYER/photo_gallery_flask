@@ -776,7 +776,7 @@ form .page .btns button.next {
     left: 50%;
     top: 70%;
     font-size: 15px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -25%);
     display: none;
 }
 
@@ -814,7 +814,7 @@ form .page .btns button.next {
         left: 50%;
         top: 50%;
         font-size: 15px;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -55%);
         display: none;
     }
 

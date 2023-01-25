@@ -2,12 +2,15 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from werkzeug.security import check_password_hash
+from werkzeug.utils import secure_filename
 import json
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///admin.db'
 app.config['SECRET_KEY'] = 'thisissecretkey'
 db = SQLAlchemy(app)
+app.config['UPLOAD_FOLDER'] = 'static/img/test_photo'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -63,9 +66,24 @@ def logout():
     return redirect('/')
 
 
-@app.route('/upload')
+@app.route('/upload', methods=['GET','POST'])
 def upload():
-    return render_template('upload.html')
+    if request.method == 'GET':
+        return render_template('upload.html')
+    else:
+        title = request.form['title']
+        sub_title = request.form['sub_title']
+        category  = request.form['category']
+        new_category = request.form['new_category']
+        upload_file = request.files.getlist('upload_img')
+        for file in upload_file:
+            if file.filename == '':
+                flash('The photo was not uploaded. Try again')
+                return redirect(url_for('upload'))
+            path = os.path.join(app.config['UPLOAD_FOLDER'],file.filename)
+            file.save(path)
+        flash('Photo Updated Successfully')
+        return redirect(url_for('upload'))
 
 if __name__ == '__main__':
-    app.run(debug=True,host='192.168.0.107')
+    app.run(debug=True,host='192.168.0.115')

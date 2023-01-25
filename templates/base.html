@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/delete.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/base.css')}}">
-    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'> -->
-    
 
 </head>
 
@@ -48,20 +46,6 @@
                         <a href="{{ url_for('upload') }}">
                             <i class='material-icons icon'>upload</i>
                             <span class="text nav-text">Upload</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link {% if request.endpoint=='delete' %}active{%endif %}">
-                        <a href="{{ url_for('delete') }}">
-                            <i class='material-icons icon'>delete</i>
-                            <span class="text nav-text">Delete Photo</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link {% if request.endpoint=='update' %}active{%endif %}">
-                        <a href="{{ url_for('update') }}">
-                            <i class='material-icons icon'>update</i>
-                            <span class="text nav-text">Update Photo</span>
                         </a>
                     </li>
 

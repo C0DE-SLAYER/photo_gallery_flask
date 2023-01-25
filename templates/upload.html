@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
 
+
+
 {% block content %}
+
+
 <div class="body_css">
 
     <div class="container_1">
+        
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+     <ul class="flash_mess">
+     {% for message in messages %}
+       <li><p>{{ message }}</p></li>
+     {% endfor %}
+     </ul>
+    {% endif %}
+   {% endwith %}
         <header>Upload Form</header>
         <div class="upload_progress_bar">
 
@@ -30,17 +44,17 @@
             </div>
         </div>
         <div class="form-outer">
-            <form action="" method="post" enctype="multipart/form-data" id="form-upload">
+            <form action="/upload" method="post" enctype="multipart/form-data" id="form-upload">
 
                 <div class="page slide-page">
                     <div class="title">Photo Title</div>
                     <div class="field">
                         <div class="upload_label">Title *</div>
-                        <input type="text" />
+                        <input type="text" name="title" required/>
                     </div>
                     <div class="field">
                         <div class="upload_label">Sub-Title</div>
-                        <input type="text" />
+                        <input type="text" name="sub_title"/>
                     </div>
                     <div class="field btns">
                         <button class="next-3 next">Next</button>
@@ -51,7 +65,7 @@
                     <div class="title">Category</div>
                     <div class="field">
                         <div class="upload_label">Existing Category</div>
-                        <select>
+                        <select name="category" required>
                             <option value="">None</option>
                             <option name="cat1">fashion</option>
                             <option name="cat2">lifestyle</option>
@@ -62,7 +76,7 @@
                     </div>
                     <div class="field">
                         <div class="upload_label">New Category</div>
-                        <input type="text" />
+                        <input type="text" name="new_category"/>
                     </div>
                     <div class="field btns">
                         <button class="prev-4 prev">Previous</button>
@@ -75,7 +89,7 @@
                     <div class="field_upload">
                         <div class="upload_label mb-3" style="float: left;">Upload Photo</div>
                         <div class="form-group">
-                            <input type="file" class="form-control" name="images[]" multiple id="upload-img" />
+                            <input type="file" class="form-control" name="upload_img" multiple id="upload-img" />
                         </div>
                         <div class="img-thumbs img-thumbs-hidden" id="img-preview"></div>
                     </div>

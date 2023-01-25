@@ -926,3 +926,12 @@ form .page .btns button.next {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
+
+.flash_mess li{
+list-style-type: none
+}
+.flash_mess li p{
+  color: red;
+  font-size: 30px;
+  font-weight: 400;
+}

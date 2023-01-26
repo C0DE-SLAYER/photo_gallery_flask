@@ -268,6 +268,7 @@ input {
 [type=button],
 [type=reset],
 [type=submit] {
+    appearance: button;
     -webkit-appearance: button
 }
 
@@ -298,6 +299,7 @@ input {
 
 [type=search] {
     outline-offset: -2px;
+    appearance: textfield;
     -webkit-appearance: textfield
 }
 
@@ -455,6 +457,7 @@ input {
     --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x))
@@ -4081,24 +4084,8 @@ input {
 .bg-gradient-dark {
     background-image: linear-gradient(195deg, #42424a 0, #191919 100%)
 }
-/* 
-.material-icons {
-    font-family: 'Material Icons Round';
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga'
-} */
+
+
 
 .icon-shape {
     width: 48px;
@@ -4130,8 +4117,8 @@ input {
 }
 
 .icon-lg i {
-    top: 31%;
-    font-size: 1.5rem
+    top: 25%;
+    font-size: 3.5rem
 }
 
 .icon-xl {
@@ -4770,6 +4757,6 @@ table.table td i {
 
 /* table css */
 .table-fix{
-    height: 60vh;
+    height: 50vh;
     overflow-y: scroll;
 }

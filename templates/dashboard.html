@@ -5,82 +5,67 @@
 
 
   <div class="row mt-7">
+
+    <!-- first card -->
     <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-header p-3 pt-2">
           <div
             class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
-            <i class="material-icons opacity-10">weekend</i>
+            <i class="material-icons opacity-10 ">person</i>
           </div>
           <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-            <h4 class="mb-0">$53k</h4>
+            <p class="text-sm mb-0 text-capitalize">Total User</p>
+            <h4 class="mb-0">1</h4>
           </div>
         </div>
         <hr class="dark horizontal my-0">
         <div class="card-footer p-3">
-          <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than lask
-            week</p>
+          <!-- <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than lask week</p> -->
         </div>
       </div>
     </div>
+
+    <!-- second card -->
     <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-header p-3 pt-2">
           <div
             class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-            <i class="material-icons opacity-10">person</i>
+            <i class="material-icons opacity-10 ">photo_library</i>
           </div>
           <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-            <h4 class="mb-0">2,300</h4>
+            <p class="text-sm mb-0 text-capitalize">Total Photo</p>
+            <h4 class="mb-0">{{range_len}}</h4>
           </div>
         </div>
         <hr class="dark horizontal my-0">
         <div class="card-footer p-3">
-          <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than lask
-            month</p>
+          <!-- <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than lask month</p> -->
         </div>
       </div>
     </div>
+
+    <!-- third card -->
     <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
       <div class="card">
         <div class="card-header p-3 pt-2">
           <div
             class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-            <i class="material-icons opacity-10">person</i>
+            <i class="material-icons opacity-10 ">category</i>
           </div>
           <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">New Clients</p>
-            <h4 class="mb-0">3,462</h4>
+            <p class="text-sm mb-0 text-capitalize">Total Category</p>
+            <h4 class="mb-0">5</h4>
           </div>
         </div>
         <hr class="dark horizontal my-0">
         <div class="card-footer p-3">
-          <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than
-            yesterday</p>
+          <!-- <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p> -->
         </div>
       </div>
     </div>
-    <div class="col-xl-3 col-sm-6">
-      <div class="card">
-        <div class="card-header p-3 pt-2">
-          <div
-            class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-            <i class="material-icons opacity-10">weekend</i>
-          </div>
-          <div class="text-end pt-1">
-            <p class="text-sm mb-0 text-capitalize">Sales</p>
-            <h4 class="mb-0">$103,430</h4>
-          </div>
-        </div>
-        <hr class="dark horizontal my-0">
-        <div class="card-footer p-3">
-          <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than
-            yesterday</p>
-        </div>
-      </div>
-    </div>
+
   </div>
 
   <div class="table-responsive table-fix">
@@ -93,6 +78,7 @@
           <tr>
             <th>#</th>
             <th>Title</th>
+            <th>Sub-Title</th>
             <th>Catagory</th>
             <th>Actions</th>
           </tr>
@@ -103,7 +89,8 @@
           <tr>
             <td>{{i+1}}</td>
             <td>{{photo_data[i]['title']}}</td>
-            <td>{{photo_data[i]['filter']}}</td>
+            <td>{{photo_data[i]['sub_title']}}</td>
+            <td>{{photo_data[i]['category']}}</td>
             <td>
 
               <!-- view button in table start here -->
@@ -120,7 +107,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <img class="img-responsive" src="{{url_for('static',filename= photo_data[i]['path'])}}">
+                      <img class="img-responsive" src="{{url_for('static',filename= photo_data[i]['photo_path'])}}">
                     </div>
                   </div>
                 </div>
@@ -129,8 +116,9 @@
 
 
               <!-- edit button here -->
-              <a href="#" class="edit" title="Edit" data-toggle="modal" data-target="#edit{{i}}"><i class="material-icons">&#xE254;</i></a>
-              
+              <a href="#" class="edit" title="Edit" data-toggle="modal" data-target="#edit{{i}}"><i
+                  class="material-icons">&#xE254;</i></a>
+
               <div class="modal fade" id="edit{{i}}" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -143,18 +131,18 @@
                     </div>
                     <div class="modal-body">
                       <p>Title: <input type="text" name="edit{{i}}" placeholder="{{photo_data[i]['title']}}"></p>
-                      <p>Photo : <img src="{{url_for('static',filename=photo_data[i]['path'])}}" width="100px"
-                        height="100px"></p> 
+                      <p>Photo : <img src="{{url_for('static',filename=photo_data[i]['photo_path'])}}" width="100px"
+                          height="100px"></p>
                       <p>Replace The Image: <input type="file" name="file{{i}}"> </p>
-                      <p>Catagory: 
+                      <p>Catagory:
                         <select name="option{{i}}">
-                        <option value="photo">Photo</option>
-                        <option value="lifestyle">Lifestyle</option>
-                        <option value="fashion">Fashion</option>
-                        <option value="natural">Natural</option>
-                        <option value="travel">Travel</option>
-                      </select>
-                    </p>
+                          <option value="photo">Photo</option>
+                          <option value="lifestyle">Lifestyle</option>
+                          <option value="fashion">Fashion</option>
+                          <option value="natural">Natural</option>
+                          <option value="travel">Travel</option>
+                        </select>
+                      </p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -182,7 +170,7 @@
                     </div>
                     <div class="modal-body">
                       <p>Title : {{photo_data[i]['title']}}</p>
-                      <p>Photo : <img src="{{url_for('static',filename=photo_data[i]['path'])}}" width="100px"
+                      <p>Photo : <img src="{{url_for('static',filename=photo_data[i]['photo_path'])}}" width="100px"
                           height="100px"></p>
 
                     </div>
@@ -195,8 +183,6 @@
                 </div>
               </div>
               <!-- delete button end here -->
-
-
 
             </td>
           </tr>

@@ -2,15 +2,16 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from werkzeug.security import check_password_hash
-from werkzeug.utils import secure_filename
 import json
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///admin.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meta_data.db'
 app.config['SECRET_KEY'] = 'thisissecretkey'
 db = SQLAlchemy(app)
 app.config['UPLOAD_FOLDER'] = 'static/img/test_photo'
+
+app.app_context().push()
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -26,6 +27,13 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(100))
     password = db.Column(db.String(100))
 
+class metadata(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200))
+    sub_title = db.Column(db.String(100))
+    category = db.Column(db.String(100))
+    photo_path = db.Column(db.String(500))
+
 
 with open('photo_data.json','r') as f:
     photo_data = json.load(f)
@@ -39,7 +47,8 @@ def home():
 @app.route('/dashboard')
 # @login_required
 def dashboard():
-    return render_template('dashboard.html',photo_data=photo_data,range_len=len(photo_data))
+    metadata_query = metadata.query.all()
+    return render_template('dashboard.html',photo_data=metadata_query,range_len=len(metadata_query))
 
 
 @app.route('/login', methods=['GET','POST'])
@@ -73,17 +82,21 @@ def upload():
     else:
         title = request.form['title']
         sub_title = request.form['sub_title']
-        category  = request.form['category']
         new_category = request.form['new_category']
+        category  = request.form['category'] if new_category == '' else new_category
         upload_file = request.files.getlist('upload_img')
         for file in upload_file:
-            if file.filename == '':
-                flash('The photo was not uploaded. Try again')
+            try:
+                path = os.path.join(app.config['UPLOAD_FOLDER'],file.filename)
+                file.save(path)
+            except :
+                flash(f'The photo was not uploaded. Try again')
                 return redirect(url_for('upload'))
-            path = os.path.join(app.config['UPLOAD_FOLDER'],file.filename)
-            file.save(path)
+        data_to_put_in_database = metadata(title=title,sub_title=sub_title,category=category,photo_path=path.replace('static/',''))
+        db.session.add(data_to_put_in_database)
+        db.session.commit()
         flash('Photo Updated Successfully')
         return redirect(url_for('upload'))
 
 if __name__ == '__main__':
-    app.run(debug=True,host='192.168.0.115')
+    app.run(debug=True,host='192.168.0.107')

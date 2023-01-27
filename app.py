@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user
 from werkzeug.security import check_password_hash
 import json
 import os
@@ -43,14 +43,12 @@ index = [1, 2, 3, 4, 5, 6, 4, 7, 4, 7, 8, 7, 9,2,10,11,12,10,13]
 def getting_category():
     get_category = metadata.query.all()
     unique_category = set([get_category[i].category for i in range(len(get_category))])
-    if len(unique_category) == 0:
-        unique_category = '0'
     return unique_category
-    
 
 @app.route('/')
 def home():
-    return render_template('index.html',photo_data=photo_data,range_len=len(photo_data),index=index)
+    metadata_query = metadata.query.all()
+    return render_template('index.html',photo_data=metadata_query,range_len=len(metadata_query),index=index)
 
 @app.route('/dashboard')
 # @login_required
@@ -120,11 +118,12 @@ def update():
         try:
             path = request.files['file']
             path1 = os.path.join(app.config['UPLOAD_FOLDER'],path.filename)
-            path.save(path1) 
+            path.save(path1)
+            os.remove(f'static/{photo_data[0].photo_path}')
         except FileNotFoundError:
             pass
 
-        metadata.query.filter_by(id=id).update(dict(title=title if title !='' else photo_data[0].title,sub_title=sub_title if sub_title !='' else photo_data[0].sub_title,category=category if category !='' else photo_data[0].category,photo_path=path1 if path !='' else photo_data[0].photo_path))
+        metadata.query.filter_by(id=id).update(dict(title=title if title !='' else photo_data[0].title,sub_title=sub_title if sub_title !='' else photo_data[0].sub_title,category=category if category !='' else photo_data[0].category,photo_path=path1.replace('static/','') if path !='' else photo_data[0].photo_path))
         db.session.commit()
 
         return redirect(url_for('dashboard'))
@@ -133,7 +132,14 @@ def update():
 def delete():
     if request.method == 'POST':
         id = request.form['ikivalue']
-        
+        delete_data = metadata.query.filter_by(id=id).first()
+        try:
+            os.remove(f'static/{delete_data.photo_path}')
+        except FileNotFoundError:
+            pass
+        db.session.delete(delete_data)
+        db.session.commit()
+        return redirect(url_for('dashboard'))
 
 if __name__ == '__main__':
-    app.run(debug=True,host='172.25.171.70')
+    app.run(debug=True,host='192.168.0.107')

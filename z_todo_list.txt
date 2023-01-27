@@ -1,0 +1,6 @@
+index page ka loading logo 
+dashboard sa home par janay ka button 
+code ko clean karna hai sab different file ma likna hai
+jo kaam ka nahi hai delete karna hai
+photo add karna hai 
+or login ka page new design karna hai or login implement karna hai 

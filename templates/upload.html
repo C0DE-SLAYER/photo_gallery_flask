@@ -68,7 +68,7 @@
                         <div class="upload_label">Existing Category</div>
                         <select name="category">
                             <option value="">Select Category</option>
-                            {%for i in catergory if i != '0' %}
+                            {%for i in catergory%}
                             <option name="{{i}}">{{i}}</option>
                             {%endfor%}
                         </select>

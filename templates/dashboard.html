@@ -161,7 +161,7 @@
   <a href="#" class="delete" title="Delete" data-toggle="modal" data-target="#delete-photo{{i}}"><i
       class="material-icons">&#xE872;</i></a>
 
-  <form class="modal fade" id="delete-photo{{i}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <form action="/delete" method="POST" class="modal fade" id="delete-photo{{i}}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -179,7 +179,7 @@
         <div class="modal-footer">
           <p style="color:red; float: left;">Do You Want To Delete The Photo Confirm First</p>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary">Confirm</button>
+          <button type="submit" class="btn btn-primary">Confirm</button>
         </div>
       </div>
     </div>

@@ -68,11 +68,9 @@
                         <div class="upload_label">Existing Category</div>
                         <select name="category">
                             <option value="">Select Category</option>
-                            <option name="cat1">fashion</option>
-                            <option name="cat2">lifestyle</option>
-                            <option name="cat3">natural</option>
-                            <option name="cat4">photo</option>
-                            <option name="cat5">travel</option>
+                            {%for i in catergory if i != '0' %}
+                            <option name="{{i}}">{{i}}</option>
+                            {%endfor%}
                         </select>
                     </div>
                     <div class="field">

@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://use.fontawesome.com/3a2eaf6206.js"></script>
     <link rel="stylesheet" href="{{url_for('static',filename='css/table.css')}}">
-    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/delete.css')}}"> -->
-    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> -->
     <link rel="stylesheet" href="{{url_for('static',filename='css/base.css')}}">
 
 </head>
@@ -35,9 +33,16 @@
         <div class="menu-bar">
             <div class="menu">
                 <ul class="menu-links">
+                    <li class="nav-link {% if request.endpoint=='home' %}active{%endif %}">
+                        <a href="{{ url_for('home') }}">
+                            <i class='material-icons icon'>home</i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
                     <li class="nav-link {% if request.endpoint=='dashboard' %}active{%endif %}">
                         <a href="{{ url_for('dashboard') }}">
-                            <i class='material-icons icon'>home</i>
+                            <i class='material-icons icon'>dashboard</i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>

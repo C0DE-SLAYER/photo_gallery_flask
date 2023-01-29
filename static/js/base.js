@@ -121,6 +121,12 @@ function previewImgs(event) {
         });
 
     }
-
-
 }
+
+// flash message
+const close_btn = document.getElementById('to_close')
+setTimeout(() => {
+    close_btn.classList.remove('flash_show');
+    close_btn.classList.add('flash_hide');
+},4000);
+console.log(close_btn)

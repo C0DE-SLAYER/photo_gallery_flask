@@ -18,6 +18,21 @@
 
 <body>
 
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div id="to_close" class="flash_alert flash_show showAlert">
+    <span>{{messages[0]}}</span>
+  </div>
+  <script>
+    const close_btn = document.getElementById('to_close')
+setTimeout(() => {
+    close_btn.classList.remove('flash_show');
+    close_btn.classList.add('flash_hide');
+},4000);
+  </script>
+  {% endif %}
+  {% endwith %}
+
   <!-- logo and header -->
   <header class="header">
     <a href="#" class="site-logo">
@@ -31,17 +46,18 @@
     <div class="filter-controls">
       <ul>
         <li class="active" data-filter="*">ALL</li>
-        <li data-filter=".photo">PHOTOGRAPHY</li>
-        <li data-filter=".travel">TRAVEL</li>
+        {%for i in catergory%}
+        <li data-filter=".{{i}}">{{i}}</li>
+        {%endfor%}
+        <!-- <li data-filter=".travel">TRAVEL</li>
         <li data-filter=".natural">NATURE</li>
         <li data-filter=".fashion">FASHION</li>
-        <li data-filter=".lifestyle">LIFE STYLE</li>
+        <li data-filter=".lifestyle">LIFE STYLE</li> -->
       </ul>
     </div>
       
     <!-- gallery code -->
     <div class="gallery__warp" id="lightgallery">
-      <!-- 1 photo start -->
       {%for i in range(range_len)%}
       <div class="mix grid__item grid--{{index[i%19]}} {{photo_data[i]['category']}}" data-src="{{url_for('static', filename = photo_data[i]['photo_path'] )}}">
         <a href="#">
@@ -55,16 +71,14 @@
         </a>
       </div>
       {%endfor%}
-      <!-- photo end -->
 
-      
     </div>
 
 
     <!-- logo of loding more images -->
-    <div class="gird__loading">
+    <!-- <div class="gird__loading">
       <i class="fa fa-spinner fa-spin"></i>
-    </div>
+    </div> -->
 
   </section>
 

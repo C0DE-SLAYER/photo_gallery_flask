@@ -937,3 +937,67 @@ list-style-type: none
   font-size: 30px;
   font-weight: 400;
 }
+
+
+/* alert box css */
+.flash_alert{
+  background: #ffdb9b;
+  padding: 20px 40px;
+  max-width: 300px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid #ffa502;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.flash_alert.showAlert{
+  opacity: 1;
+  pointer-events: auto;
+}
+.flash_alert.flash_show{
+  animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+.flash_alert.flash_hide{
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+@media (max-width: 600px) {
+  .flash_alert {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+#to_close{
+  z-index: 999;
+}

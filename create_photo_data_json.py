@@ -1,5 +1,6 @@
 import os
 import json
+import random
 
 path = "static/img"
 image_paths = []
@@ -12,8 +13,12 @@ for root, dirs, files in os.walk(path):
                         image_path = os.path.join(root, file)
                         image_path = image_path.replace('static/','')
 # Add image path and directory names to list
-                        image_paths.append({"path": image_path, "filter":root.split('/')[-1]})
+                        image_paths.append({"title":f'title{random.randrange(1,10000)}',
+                        "sub_title": f'sub title{random.randrange(1,34789)}',
+                        "category": random.choice(['photo','fashion','lifestyle','travel','natural']),
+                        'photo_path': image_path
+                        })
                         image_paths_json = json.dumps(image_paths)
-with open('photo_data1.json', 'w') as f:
+with open('photo_data.json', 'w') as f:
         f.write(image_paths_json)
 # print(image_paths_json)

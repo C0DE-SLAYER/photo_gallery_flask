@@ -1,23 +1,18 @@
 {% extends 'base.html' %}
 
 
-
 {% block content %}
 
 
 <div class="body_css">
-
-    <div class="container_1">
-        
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-     <ul class="flash_mess">
-     {% for message in messages %}
-       <li><p>{{ message }}</p></li>
-     {% endfor %}
-     </ul>
+        <div id="to_close" class="flash_alert flash_show showAlert">
+            <span>{{messages[0]}}</span>
+        </div>
     {% endif %}
-   {% endwith %}
+    {% endwith %}
+    <div class="container_1">
 
         <header>Upload Form</header>
         <div class="upload_progress_bar">

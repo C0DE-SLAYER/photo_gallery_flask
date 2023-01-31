@@ -158,7 +158,6 @@ ul {
 
 .filter-controls ul li:after {
 	position: absolute;
-	content: "•";
 	font-family: "Aldrich", sans-serif;
 	font-size: 14px;
 	color: #B7B7B7;

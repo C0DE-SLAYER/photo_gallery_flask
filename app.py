@@ -37,8 +37,12 @@ class metadata(db.Model, UserMixin):
 
 index = [1, 2, 3, 4, 5, 6, 4, 7, 4, 7, 8, 7, 9,2,10,11,12,10,13]
 
+def query_database():
+    return metadata.query.all()
+
+
 def getting_category():
-    get_category = metadata.query.all()
+    get_category = query_database()
     unique_category = list(set([get_category[i].category for i in range(len(get_category))]))
     try: 
         unique_category.remove('')
@@ -48,13 +52,13 @@ def getting_category():
 
 @app.route('/')
 def home():
-    metadata_query = metadata.query.all()
+    metadata_query = query_database()
     return render_template('index.html',photo_data=metadata_query,range_len=len(metadata_query),index=index,catergory=getting_category())
 
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    metadata_query = metadata.query.all()
+    metadata_query = query_database()
     return render_template('dashboard.html',photo_data=metadata_query,range_len=len(metadata_query),catergory=getting_category(),category_len=len(getting_category()))
 
 
@@ -158,4 +162,4 @@ def delete_category():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host='192.168.0.107')
+    app.run(debug=True,host='192.168.0.113')

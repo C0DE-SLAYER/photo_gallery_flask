@@ -36,7 +36,7 @@ setTimeout(() => {
   <!-- logo and header -->
   <header class="header">
     <a href="#" class="site-logo">
-      <img src="{{url_for('static', filename = 'img/logo.jpg')}}" alt="">
+      <img src="{{url_for('static', filename = 'logo.jpg')}}" alt="">
     </a>
   </header>
 
@@ -49,10 +49,6 @@ setTimeout(() => {
         {%for i in catergory%}
         <li data-filter=".{{i}}">{{i}}</li>
         {%endfor%}
-        <!-- <li data-filter=".travel">TRAVEL</li>
-        <li data-filter=".natural">NATURE</li>
-        <li data-filter=".fashion">FASHION</li>
-        <li data-filter=".lifestyle">LIFE STYLE</li> -->
       </ul>
     </div>
       
@@ -62,7 +58,7 @@ setTimeout(() => {
       <div class="mix grid__item grid--{{index[i%19]}} {{photo_data[i]['category']}}" data-src="{{url_for('static', filename = photo_data[i]['photo_path'] )}}">
         <a href="#">
           <div class="gallery_img set-bg"  data-setbg="{{url_for('static', filename = photo_data[i]['photo_path'] )}}">
-            <img class="go" src="{{url_for('static', filename = photo_data[i]['photo_path'] )}}" alt="">
+            <img class="go" loading="lazy" src="{{url_for('static', filename = photo_data[i]['photo_path'] )}}" alt="">
             <div class="gellery__text ">
               <span>{{photo_data[i]['title']}}</span>
               <h3>{{photo_data[i]['sub_title']}}</h3>

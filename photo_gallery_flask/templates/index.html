@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Manmeet Bhatti</title>
+  <title>Photo Portfolio flask</title>
   <meta charset="UTF-8">
   <meta name="description" content="SUNZINE Photo Studio HTML Template">
   <meta name="keywords" content="photo, html">
@@ -20,7 +20,7 @@
 
   {% with messages = get_flashed_messages() %}
   {% if messages %}
-  <div id="to_close" class="flash_alert flash_show showAlert">
+  <div id="to_close" class="flash_alert flash_show showAlert" >
     <span>{{messages[0]}}</span>
   </div>
   <script>
@@ -36,7 +36,8 @@ setTimeout(() => {
   <!-- logo and header -->
   <header class="header">
     <a href="#" class="site-logo">
-      <img src="{{url_for('static', filename = 'logo.jpg')}}" alt="">
+      <!-- <img src="{{url_for('static', filename = 'logo.jpg')}}" alt=""> -->
+      <p>SFA</p>
     </a>
   </header>
 
@@ -69,12 +70,6 @@ setTimeout(() => {
       {%endfor%}
 
     </div>
-
-
-    <!-- logo of loding more images -->
-    <!-- <div class="gird__loading">
-      <i class="fa fa-spinner fa-spin"></i>
-    </div> -->
 
   </section>
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Photo Portfolio flask</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="SUNZINE Photo Studio HTML Template">
+  <meta name="keywords" content="photo, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/lightgallery.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/../static/css/all.min.css" />
+
+
+</head>
+
+<body>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div id="to_close" class="flash_alert flash_show showAlert" >
+    <span>{{messages[0]}}</span>
+  </div>
+  <script>
+    const close_btn = document.getElementById('to_close')
+setTimeout(() => {
+    close_btn.classList.remove('flash_show');
+    close_btn.classList.add('flash_hide');
+},4000);
+  </script>
+  {% endif %}
+  {% endwith %}
+
+  <!-- logo and header -->
+  <header class="header">
+    <a href="#" class="site-logo">
+      <!-- <img src="{{url_for('static', filename = 'logo.jpg')}}" alt=""> -->
+      <p>SFA</p>
+    </a>
+  </header>
+
+  <section class="gallery__section">
+
+    <!-- filter part -->
+    <div class="filter-controls">
+      <ul>
+        <li class="active" data-filter="*">ALL</li>
+        {%for i in catergory%}
+        <li data-filter=".{{i}}">{{i}}</li>
+        {%endfor%}
+      </ul>
+    </div>
+      
+    <!-- gallery code -->
+    <div class="gallery__warp" id="lightgallery">
+      {%for i in range(range_len)%}
+      <div class="mix grid__item grid--{{index[i%19]}} {{photo_data[i]['category']}}" data-src="{{url_for('static', filename = photo_data[i]['photo_path'] )}}">
+        <a href="#">
+          <div class="gallery_img set-bg"  data-setbg="{{url_for('static', filename = photo_data[i]['photo_path'] )}}">
+            <img class="go" loading="lazy" src="{{url_for('static', filename = photo_data[i]['photo_path'] )}}" alt="">
+            <div class="gellery__text ">
+              <span>{{photo_data[i]['title']}}</span>
+              <h3>{{photo_data[i]['sub_title']}}</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+
+    </div>
+
+  </section>
+
+  <script src="{{url_for('static', filename = 'js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'js/mixitup.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+  <script src="{{url_for('static', filename = 'js/lightgallery-all.min.js')}}"></script>
+
+</body>
+
+</html>

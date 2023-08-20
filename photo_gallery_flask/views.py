@@ -1,12 +1,11 @@
-from photo_gallery_flask import app,db,cache,login_manager
-from photo_gallery_flask.models import User,metadata
+from photo_gallery_flask import app, db, login_manager
+from photo_gallery_flask.models import User, metadata
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, login_required, logout_user
-import uuid
 import io
 from werkzeug.security import check_password_hash
-import os
 from PIL import Image
+import base64
 
 
 @login_manager.user_loader
@@ -16,7 +15,12 @@ def load_user(user_id):
 index = [1, 2, 3, 4, 5, 6, 4, 7, 4, 7, 8, 7, 9,2,10,11,12,10,13]
 
 def query_database():
-    return metadata.query.all()
+    metadata_db = metadata.query.all()
+    decode_img = []
+    for m in metadata_db:
+        data = metadata(id=m.id,title=m.title,sub_title=m.sub_title,category=m.category,uploaded_img=base64.b64encode(m.uploaded_img).decode('utf-8'))
+        decode_img.append(data)
+    return decode_img
 
 def getting_category():
     get_category = query_database()
@@ -28,7 +32,6 @@ def getting_category():
     return unique_category
 
 @app.route('/')
-@cache.cached()
 def home():
     metadata_query = query_database()
     return render_template('index.html',photo_data=metadata_query,range_len=len(metadata_query),index=index,catergory=getting_category())
@@ -80,17 +83,19 @@ def upload():
         new_category = request.form['new_category']
         category  = request.form['category'] if new_category == '' else new_category.replace(' ','_')
         upload_file = request.files['upload_img'].read()
-        if upload_file != '':
+        if upload_file:
             try:
                 img = Image.open(io.BytesIO(upload_file))
-                path = os.path.join('photo_gallery_flask',app.config['UPLOAD_FOLDER'],f'{str(uuid.uuid4())}.webp')
-                img.save(path , "webp", quality=60, optimize=True)
-                data_to_put_in_database = metadata(title=title,sub_title=sub_title,category=category,photo_path=path.replace('photo_gallery_flask/static/',''))
+                optimize_img = io.BytesIO()
+                img.save(optimize_img , "webp", quality=50, optimize=True)
+                optimize_img_data = optimize_img.getvalue()
+                data_to_put_in_database = metadata(title=title,sub_title=sub_title,category=category,uploaded_img=optimize_img_data)
                 db.session.add(data_to_put_in_database)
                 db.session.commit()
                 flash('Photo Uploaded Successfully')
                 return redirect(url_for('upload'))
-            except :
+            except Exception as e:
+                return f'{e}'
                 flash(f'The photo was not uploaded. Try again')
                 return redirect(url_for('upload'))
         else:
@@ -105,30 +110,25 @@ def update():
     id = request.form['ikivalue']
     photo_data = metadata.query.get(id)
     upload_file = request.files['file'].read()
-    if upload_file != b'':
-        try:
+    try:
+        if upload_file:
             img = Image.open(io.BytesIO(upload_file))
-            path = os.path.join('photo_gallery_flask',app.config['UPLOAD_FOLDER'],f'{str(uuid.uuid4())}.webp')
-            img.save(path , "webp", quality=60, optimize=True)
-            os.remove(photo_data.photo_path)
-        except:
-            flash('There was some error while changing the detail. Try again')
-            return redirect(url_for('dashboard'))
-
-    metadata.query.filter_by(id=id).update(dict(title=title if title !='' else photo_data.title,sub_title=sub_title if sub_title !='' else photo_data.sub_title,category=category if category !='' else photo_data.category, photo_path=path.replace('photo_gallery_flask/static/','') if upload_file != b'' else photo_data.photo_path))
-    db.session.commit()
-    flash('Detail Updated')
-    return redirect(url_for('dashboard'))
+            optimize_img = io.BytesIO()
+            img.save(optimize_img , "webp", quality=50, optimize=True)
+            optimize_img_data = optimize_img.getvalue()
+        metadata.query.filter_by(id=id).update(dict(title=title if title else photo_data.title,sub_title=sub_title if sub_title else photo_data.sub_title,category=category if category else photo_data.category, uploaded_img= optimize_img_data if upload_file else photo_data.uploaded_img))
+        db.session.commit()
+        flash('Detail Updated')
+        return redirect(url_for('dashboard'))
+    except:
+        flash('There was some error while changing the detail. Try again')
+        return redirect(url_for('dashboard'))
 
 
 @app.route('/delete',methods=['POST'])
 def delete():
     id = request.form['ikivalue']
     delete_data = metadata.query.filter_by(id=id).first()
-    try:
-        os.remove(f'photo_gallery_flask/static/{delete_data.photo_path}')
-    except :
-        pass
     db.session.delete(delete_data)
     db.session.commit()
     flash('The Selected Photo Has Been Deleted!')

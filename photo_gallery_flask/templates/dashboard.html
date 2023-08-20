@@ -153,7 +153,7 @@ setTimeout(() => {
                       </button>
                     </div>
                     <div class="modal-body">
-                      <img class="img-responsive" src="{{url_for('static',filename= photo_data[i]['photo_path'])}}">
+                      <img class="img-responsive" src="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}">
                     </div>
                   </div>
                 </div>

@@ -12,4 +12,4 @@ class metadata(db.Model, UserMixin):
     title = db.Column(db.String(200))
     sub_title = db.Column(db.String(100))
     category = db.Column(db.String(100))
-    photo_path = db.Column(db.String(500))
+    uploaded_img = db.Column(db.LargeBinary)

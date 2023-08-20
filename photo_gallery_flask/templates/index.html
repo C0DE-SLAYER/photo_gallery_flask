@@ -56,10 +56,10 @@ setTimeout(() => {
     <!-- gallery code -->
     <div class="gallery__warp" id="lightgallery">
       {%for i in range(range_len)%}
-      <div class="mix grid__item grid--{{index[i%19]}} {{photo_data[i]['category']}}" data-src="{{url_for('static', filename = photo_data[i]['photo_path'] )}}">
+      <div class="mix grid__item grid--{{index[i%19]}} {{photo_data[i]['category']}}" data-src="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}">
         <a href="#">
-          <div class="gallery_img set-bg"  data-setbg="{{url_for('static', filename = photo_data[i]['photo_path'] )}}">
-            <img class="go" loading="lazy" src="{{url_for('static', filename = photo_data[i]['photo_path'] )}}" alt="">
+          <div class="gallery_img set-bg"  data-setbg="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}">
+            <img class="go" loading="lazy" src="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}" alt="">
             <div class="gellery__text ">
               <span>{{photo_data[i]['title']}}</span>
               <h3>{{photo_data[i]['sub_title']}}</h3>

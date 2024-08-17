@@ -4,3 +4,4 @@ Flask_Login
 flask_sqlalchemy
 Pillow
 Werkzeug
+psycopg2-binary

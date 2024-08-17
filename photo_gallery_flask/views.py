@@ -1,46 +1,45 @@
-from photo_gallery_flask import app, db, login_manager
-from photo_gallery_flask.models import User, metadata
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, login_required, logout_user
-import io
+from io import BytesIO
 from werkzeug.security import check_password_hash
 from PIL import Image
-import base64
 
+from photo_gallery_flask import app, db, login_manager
+from photo_gallery_flask.models import User, metadata
+from .utils import query_database, getting_category
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-index = [1, 2, 3, 4, 5, 6, 4, 7, 4, 7, 8, 7, 9,2,10,11,12,10,13]
-
-def query_database():
-    metadata_db = metadata.query.all()
-    decode_img = []
-    for m in metadata_db:
-        data = metadata(id=m.id,title=m.title,sub_title=m.sub_title,category=m.category,uploaded_img=base64.b64encode(m.uploaded_img).decode('utf-8'))
-        decode_img.append(data)
-    return decode_img
-
-def getting_category():
-    get_category = query_database()
-    unique_category = list(set([get_category[i].category for i in range(len(get_category))]))
-    try: 
-        unique_category.remove('')
-    except:
-        pass
-    return unique_category
 
 @app.route('/')
 def home():
     metadata_query = query_database()
-    return render_template('index.html',photo_data=metadata_query,range_len=len(metadata_query),index=index,catergory=getting_category())
+
+    context = {
+        'photo_data': metadata_query,
+        'range_len': len(metadata_query),
+        'index': [1, 2, 3, 4, 5, 6, 4, 7, 4, 7, 8, 7, 9,2,10,11,12,10,13],
+        'catergory': getting_category()
+    }
+
+    return render_template('index.html', **context)
+
 
 @app.route('/dashboard')
 @login_required
 def dashboard():
     metadata_query = query_database()
-    return render_template('dashboard.html',photo_data=metadata_query,range_len=len(metadata_query),catergory=getting_category(),category_len=len(getting_category()))
+
+    context= {
+        'photo_data': metadata_query,
+        'range_len': len(metadata_query),
+        'catergory':getting_category(),
+        'category_len':len(getting_category())
+    }
+
+    return render_template('dashboard.html', **context)
 
 
 @app.route('/login', methods=['GET','POST'])
@@ -64,6 +63,7 @@ def login():
             flash('Please check your username or Check password is correct or not')
             return redirect(url_for('login'))
 
+
 @app.route('/logout')
 @login_required
 def logout():
@@ -85,8 +85,8 @@ def upload():
         upload_file = request.files['upload_img'].read()
         if upload_file:
             try:
-                img = Image.open(io.BytesIO(upload_file))
-                optimize_img = io.BytesIO()
+                img = Image.open(BytesIO(upload_file))
+                optimize_img = BytesIO()
                 img.save(optimize_img , "webp", quality=50, optimize=True)
                 optimize_img_data = optimize_img.getvalue()
                 data_to_put_in_database = metadata(title=title,sub_title=sub_title,category=category,uploaded_img=optimize_img_data)
@@ -95,12 +95,12 @@ def upload():
                 flash('Photo Uploaded Successfully')
                 return redirect(url_for('upload'))
             except Exception as e:
-                return f'{e}'
                 flash(f'The photo was not uploaded. Try again')
                 return redirect(url_for('upload'))
         else:
             flash(f'Please select correct file')
             return redirect(url_for('upload'))
+
 
 @app.route('/update',methods=['POST'])
 def update():
@@ -112,8 +112,8 @@ def update():
     upload_file = request.files['file'].read()
     try:
         if upload_file:
-            img = Image.open(io.BytesIO(upload_file))
-            optimize_img = io.BytesIO()
+            img = Image.open(BytesIO(upload_file))
+            optimize_img = BytesIO()
             img.save(optimize_img , "webp", quality=50, optimize=True)
             optimize_img_data = optimize_img.getvalue()
         metadata.query.filter_by(id=id).update(dict(title=title if title else photo_data.title,sub_title=sub_title if sub_title else photo_data.sub_title,category=category if category else photo_data.category, uploaded_img= optimize_img_data if upload_file else photo_data.uploaded_img))

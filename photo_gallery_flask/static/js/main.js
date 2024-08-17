@@ -15,15 +15,6 @@ $(window).on('load', function() {
 		mixitup(containerEl);
 	}
 
-	/*------------------
-		calling lightgallery function to start image gallery 
-	--------------------*/
-	$(document).ready(function () {
-		$('#lightgallery').lightGallery({
-			download: false,
-			autoplay: true,
-		});
-	  });
 });
 
 (function($) {

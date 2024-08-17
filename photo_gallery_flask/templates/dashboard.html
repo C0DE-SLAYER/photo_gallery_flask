@@ -14,14 +14,14 @@
   </div>
   <script>
     const close_btn = document.getElementById('to_close')
-setTimeout(() => {
-    close_btn.classList.remove('flash_show');
-    close_btn.classList.add('flash_hide');
-},4000);
+    setTimeout(() => {
+      close_btn.classList.remove('flash_show');
+      close_btn.classList.add('flash_hide');
+    }, 4000);
   </script>
   {% endif %}
   {% endwith %}
-  
+
   <div class="row mt-7">
 
     <!-- first card -->
@@ -137,6 +137,7 @@ setTimeout(() => {
             <td>{{photo_data[i]['title']}}</td>
             <td>{{photo_data[i]['sub_title']}}</td>
             <td>{{photo_data[i]['category']}}</td>
+            
             <td>
 
               <!-- view button in table start here -->
@@ -179,7 +180,7 @@ setTimeout(() => {
                       <p>Title: <input type="text" name="title" placeholder="{{photo_data[i]['title']}}"></p>
                       <p>sub_title: <input type="text" name="sub_title" placeholder="{{photo_data[i]['sub_title']}}">
                       </p>
-                      <p>Photo : <img src="{{url_for('static',filename=photo_data[i]['photo_path'])}}" width="100px"
+                      <p>Photo : <img src="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}" width="100px"
                           height="100px"></p>
                       <input type="text" value="{{photo_data[i]['id']}}" name="ikivalue" style="display: none;">
                       <p>Replace The Image: <input type="file" name="file"> </p>
@@ -202,12 +203,12 @@ setTimeout(() => {
   <!-- edit button end here -->
 
 
-
   <!-- delete button start here -->
   <a href="#" class="delete" title="Delete" data-toggle="modal" data-target="#delete-photo{{i}}"><i
       class="material-icons">&#xE872;</i></a>
 
-  <form action="/delete" method="POST" class="modal fade" id="delete-photo{{i}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <form action="/delete" method="POST" class="modal fade" id="delete-photo{{i}}" tabindex="-1" role="dialog"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -218,7 +219,7 @@ setTimeout(() => {
         </div>
         <div class="modal-body">
           <p>Title : {{photo_data[i]['title']}}</p>
-          <p>Photo : <img src="{{url_for('static',filename=photo_data[i]['photo_path'])}}" width="100px" height="100px">
+          <p>Photo : <img src="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}" width="100px" height="100px">
           </p>
           <input type="text" value="{{photo_data[i]['id']}}" name="ikivalue" style="display: none;">
         </div>

@@ -8,7 +8,7 @@
   <meta name="keywords" content="photo, html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/../static/css/all.min.css" />
 
@@ -24,19 +24,31 @@
   <script>
     const close_btn = document.getElementById('to_close')
     setTimeout(() => {
-      close_btn.classList.remove('flash_show');
-      close_btn.classList.add('flash_hide');
+      close_btn.remove()
     }, 4000);
   </script>
   {% endif %}
   {% endwith %}
 
   <!-- logo and header -->
-  <header class="header">
-    <a href="#" class="site-logo">
-      <p>SFA</p>
-    </a>
-  </header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">SFA</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        {% if not current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  
+  
 
   <section class="gallery__section">
 

@@ -11,11 +11,8 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = getenv("SECRET_KEY")
 
-if getenv('DEBUG') == 'True': 
-    app.config['SQLALCHEMY_DATABASE_URI'] = getenv("SQLALCHEMY_DATABASE_URI_SQLITE")
-else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = getenv("SQLALCHEMY_DATABASE_URI_POSTGRES")
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = getenv("SQLALCHEMY_DATABASE_URI_POSTGRES")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 cache = Cache(

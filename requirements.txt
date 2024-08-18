@@ -6,3 +6,4 @@ Pillow
 Werkzeug
 psycopg2-binary
 supabase
+Werkzeug

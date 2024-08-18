@@ -16,19 +16,24 @@ pip install -r requirement.txt
 python run.py
 ```
 
+## For deployment instructions
+- please visit the [deployment branch](https://github.com/C0DE-SLAYER/photo_gallery_flask/tree/deployment).
+
+
 ## Usage/Examples
 
-1. Open a terminal and type for linux/mac `export FLASK_APP=photo_gallery_flask` and for windows type `set FLASK_APP=photo_gallery_flask`
-2. Then type `flask shell` and type `db.create_all()` to create the db file use for the project 
-3. Now to create the login detail run the following command in `flask shell`show in the images 
+1. Rename the .env.example file to .env. Sign in to [Supabase](https://supabase.com/), create a new project, and fill in the env variables with the values from your project.
+2. Open a terminal and type for linux/mac `export FLASK_APP=photo_gallery_flask` and for windows type `set FLASK_APP=photo_gallery_flask`
+3. Then type `flask shell` and type `db.create_all()` to create the db file use for the project 
+4. Now to create the login detail run the following command in `flask shell`show in the images 
 ![demo_1](https://raw.githubusercontent.com/C0DE-SLAYER/photo_gallery_flask/master/photo_gallery_flask/static/github_img/user_command.png)
-4. Once you have install all the requirement using pip and create the db. Run the app using `python run.py`
-5. Now Head to your browser and type http://127.0.0.1:5000/ and http://127.0.0.1:5000/login head to login page and enter your username and password set in step 3.
-6. Demo/Example : 
+5. Once you have install all the requirement using pip and create the db. Run the app using `python run.py`
+6. Now Head to your browser and type http://127.0.0.1:5000/ and http://127.0.0.1:5000/login head to login page and enter your username and password set in step 3.
+7. Demo/Example : 
 ![demo_1](https://raw.githubusercontent.com/C0DE-SLAYER/photo_gallery_flask/master/photo_gallery_flask/static/github_img/demo_1.png)
 ![demo_2](https://raw.githubusercontent.com/C0DE-SLAYER/photo_gallery_flask/master/photo_gallery_flask/static/github_img/demo_2.png)
 ![demo_3](https://raw.githubusercontent.com/C0DE-SLAYER/photo_gallery_flask/master/photo_gallery_flask/static/github_img/demo_3.png)
-![demo_3](https://raw.githubusercontent.com/C0DE-SLAYER/photo_gallery_flask/master/photo_gallery_flask/static/github_img/demo_4.png)
+![demo_4](https://raw.githubusercontent.com/C0DE-SLAYER/photo_gallery_flask/master/photo_gallery_flask/static/github_img/demo_4.png)
 
 ## License
 

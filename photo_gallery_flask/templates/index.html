@@ -10,9 +10,7 @@
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/../static/css/all.min.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/../static/css/all.min.css" />
 
 </head>
 
@@ -56,7 +54,7 @@
     <div class="gallery__warp">
       {%for i in range(range_len)%}
       <div class="mix grid__item grid--{{index[i%19]}} {{photo_data[i]['category']}}">
-        <div class="gallery_img set-bg" data-setbg="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}">
+        <div class="gallery_img set-bg" data-setbg="{{ SUPABASE_URL }}/storage/v1/object/public/{{ SUPABASE_BUCKET_NAME }}/{{ photo_data[i]['uploaded_img'] }}">
           <div class="gellery__text ">
             <h3>{{photo_data[i]['title']}}</h3>
             <span>{{photo_data[i]['sub_title']}}</span>

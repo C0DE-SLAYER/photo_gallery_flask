@@ -154,7 +154,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <img class="img-responsive" src="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}">
+                      <img class="img-responsive" src="{{ SUPABASE_URL }}/storage/v1/object/public/{{ SUPABASE_BUCKET_NAME }}/{{ photo_data[i]['uploaded_img'] }}">
                     </div>
                   </div>
                 </div>
@@ -180,8 +180,7 @@
                       <p>Title: <input type="text" name="title" placeholder="{{photo_data[i]['title']}}"></p>
                       <p>sub_title: <input type="text" name="sub_title" placeholder="{{photo_data[i]['sub_title']}}">
                       </p>
-                      <p>Photo : <img src="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}" width="100px"
-                          height="100px"></p>
+                      <p>Photo : <img src="{{ SUPABASE_URL }}/storage/v1/object/public/{{ SUPABASE_BUCKET_NAME }}/{{ photo_data[i]['uploaded_img'] }}" width="100px" height="100px"></p>
                       <input type="text" value="{{photo_data[i]['id']}}" name="ikivalue" style="display: none;">
                       <p>Replace The Image: <input type="file" name="file"> </p>
                       <p>Catagory:
@@ -219,7 +218,7 @@
         </div>
         <div class="modal-body">
           <p>Title : {{photo_data[i]['title']}}</p>
-          <p>Photo : <img src="data:image/webp;base64,{{ photo_data[i]['uploaded_img'] }}" width="100px" height="100px">
+          <p>Photo : <img src="{{ SUPABASE_URL }}/storage/v1/object/public/{{ SUPABASE_BUCKET_NAME }}/{{ photo_data[i]['uploaded_img'] }}" width="100px" height="100px">
           </p>
           <input type="text" value="{{photo_data[i]['id']}}" name="ikivalue" style="display: none;">
         </div>

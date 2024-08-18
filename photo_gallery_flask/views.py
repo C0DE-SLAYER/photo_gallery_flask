@@ -1,12 +1,15 @@
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, login_required, logout_user
-from io import BytesIO
 from werkzeug.security import check_password_hash
-from PIL import Image
+from supabase import create_client, Client
+from os import getenv
+from uuid import uuid4
 
 from photo_gallery_flask import app, db, login_manager
 from photo_gallery_flask.models import User, metadata
-from .utils import query_database, getting_category
+from .utils import getting_category
+
+supabase: Client = create_client(getenv('SUPABASE_URL'), getenv('SUPABASE_KEY'))
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -15,13 +18,15 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-    metadata_query = query_database()
+    metadata_query = metadata.query.all()
 
     context = {
         'photo_data': metadata_query,
         'range_len': len(metadata_query),
         'index': [1, 2, 3, 4, 5, 6, 4, 7, 4, 7, 8, 7, 9,2,10,11,12,10,13],
-        'catergory': getting_category()
+        'catergory': getting_category(),
+        'SUPABASE_URL': getenv('SUPABASE_URL'),
+        'SUPABASE_BUCKET_NAME': getenv('SUPABASE_BUCKET_NAME')
     }
 
     return render_template('index.html', **context)
@@ -30,13 +35,15 @@ def home():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    metadata_query = query_database()
+    metadata_query = metadata.query.all()
 
     context= {
         'photo_data': metadata_query,
         'range_len': len(metadata_query),
         'catergory':getting_category(),
-        'category_len':len(getting_category())
+        'category_len':len(getting_category()),
+        'SUPABASE_URL': getenv('SUPABASE_URL'),
+        'SUPABASE_BUCKET_NAME': getenv('SUPABASE_BUCKET_NAME')
     }
 
     return render_template('dashboard.html', **context)
@@ -82,20 +89,29 @@ def upload():
         sub_title = request.form['sub_title']
         new_category = request.form['new_category']
         category  = request.form['category'] if new_category == '' else new_category.replace(' ','_')
-        upload_file = request.files['upload_img'].read()
+        upload_file = request.files['upload_img']
         if upload_file:
             try:
-                img = Image.open(BytesIO(upload_file))
-                optimize_img = BytesIO()
-                img.save(optimize_img , "webp", quality=50, optimize=True)
-                optimize_img_data = optimize_img.getvalue()
-                data_to_put_in_database = metadata(title=title,sub_title=sub_title,category=category,uploaded_img=optimize_img_data)
+                uploaded_filename = f"{uuid4().hex}.{upload_file.filename.rsplit('.', 1)[-1]}"
+                supabase.storage.from_(getenv('SUPABASE_BUCKET_NAME')).upload(
+                    file=upload_file.read(), 
+                    path=uploaded_filename, 
+                    file_options={"content-type": "image/*"}    
+                )
+                
+                data_to_put_in_database = metadata(
+                    title=title,
+                    sub_title=sub_title,
+                    category=category,
+                    uploaded_img=uploaded_filename
+                )
+
                 db.session.add(data_to_put_in_database)
                 db.session.commit()
                 flash('Photo Uploaded Successfully')
                 return redirect(url_for('upload'))
             except Exception as e:
-                flash(f'The photo was not uploaded. Try again')
+                flash(f'The photo was not uploaded. Try again, {e}')
                 return redirect(url_for('upload'))
         else:
             flash(f'Please select correct file')
@@ -109,14 +125,22 @@ def update():
     category = request.form['category']
     id = request.form['ikivalue']
     photo_data = metadata.query.get(id)
-    upload_file = request.files['file'].read()
+    upload_file = request.files['file']
     try:
         if upload_file:
-            img = Image.open(BytesIO(upload_file))
-            optimize_img = BytesIO()
-            img.save(optimize_img , "webp", quality=50, optimize=True)
-            optimize_img_data = optimize_img.getvalue()
-        metadata.query.filter_by(id=id).update(dict(title=title if title else photo_data.title,sub_title=sub_title if sub_title else photo_data.sub_title,category=category if category else photo_data.category, uploaded_img= optimize_img_data if upload_file else photo_data.uploaded_img))
+            supabase.storage.from_(getenv('SUPABASE_BUCKET_NAME')).update(
+                file=upload_file.read(), 
+                path=photo_data.uploaded_img, 
+                file_options={"content-type": "image/*"}
+            )
+
+        metadata.query.filter_by(id=id).update(dict(
+            title=title if title else photo_data.title,
+            sub_title=sub_title if sub_title else photo_data.sub_title,
+            category=category if category else photo_data.category, 
+            uploaded_img = photo_data.uploaded_img)
+        )
+        
         db.session.commit()
         flash('Detail Updated')
         return redirect(url_for('dashboard'))
@@ -129,6 +153,7 @@ def update():
 def delete():
     id = request.form['ikivalue']
     delete_data = metadata.query.filter_by(id=id).first()
+    supabase.storage.from_(getenv('SUPABASE_BUCKET_NAME')).remove(delete_data.uploaded_img)
     db.session.delete(delete_data)
     db.session.commit()
     flash('The Selected Photo Has Been Deleted!')

@@ -3,10 +3,10 @@ from flask_login import UserMixin
 
 
 class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
     email = db.Column(db.String(100))
-    username = db.Column(db.String(100))
-    password = db.Column(db.String(1000000))
+    username = db.Column(db.String(50))
+    password = db.Column(db.String(110))
 
 
 class metadata(db.Model, UserMixin):
@@ -14,7 +14,7 @@ class metadata(db.Model, UserMixin):
     title = db.Column(db.String(200))
     sub_title = db.Column(db.String(100))
     category = db.Column(db.String(100))
-    uploaded_img = db.Column(db.LargeBinary)
+    uploaded_img = db.Column(db.String(40))
 
     def __init__(self, title, sub_title, category, uploaded_img):
         self.title = title

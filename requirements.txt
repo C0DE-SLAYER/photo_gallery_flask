@@ -2,8 +2,7 @@ Flask
 Flask_Caching
 Flask_Login
 flask_sqlalchemy
-Pillow
-Werkzeug
-psycopg2-binary
+python-dotenv
 supabase
 Werkzeug
+psycopg2-binary
